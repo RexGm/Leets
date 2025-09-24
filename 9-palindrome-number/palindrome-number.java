@@ -1,8 +1,7 @@
 class Solution {
     public boolean isPalindrome(int x) {
-         int temp = 0;
+         int temp, pd = 0;
          int num = x;
-         int pd = 0;
         while (true){
             if(num <= 0){
                 if(x == pd){
