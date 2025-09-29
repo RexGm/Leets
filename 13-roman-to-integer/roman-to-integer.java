@@ -1,9 +1,6 @@
 class Solution {
     public int romanToInt(String s) {
         int result = 0;
-
-
-
         for(int i = s.length()-1; i >= 0  ; i--){
             char target = s.charAt(i);
             int value = findValue(target);
