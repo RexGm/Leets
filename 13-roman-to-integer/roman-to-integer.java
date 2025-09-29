@@ -1,19 +1,22 @@
 class Solution {
     public int romanToInt(String s) {
         int result = 0;
-        
+
+
+
         for(int i = s.length()-1; i >= 0  ; i--){
             char target = s.charAt(i);
+            int value = findValue(target);
+ 
             if(i <= 0){
-                    result+=findValue(target);
+                    result+=value;
                     return result;
             }
-
-             if(findValue(target) > findValue(s.charAt(i-1))){
-                        result+= findValue(target)- findValue(s.charAt(i-1));
+            int value1 =  findValue(s.charAt(i-1));
+             if(value > value1){
+                        result+= value - value1;
                         i--;
-                    }else{result+=findValue(target);}
-            
+                    }else{result+=value;}
         } 
         return result;
     }
