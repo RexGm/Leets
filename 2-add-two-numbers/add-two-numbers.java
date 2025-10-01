@@ -12,7 +12,8 @@ class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
     int carry = 0, sum = 0;
-    String result = "";
+    ListNode list = new ListNode(0);
+    ListNode head = list;
 
     while (true) {
         
@@ -31,20 +32,17 @@ class Solution {
         }else{
             carry = 0; 
         }
-        result+=sum;
+            head.next = new ListNode(sum);
+            head = head.next;;
         sum = 0;
         if(l1 == null && l2 == null){
-            if(carry != 0){result += carry;}  
+            if(carry != 0){
+            head.next = new ListNode(carry);
+            head = head.next;;}  
                 break;
             }
     }
-    ListNode list = new ListNode(0);
-    ListNode head = list;
-    for (int i = 0 ; i < result.length() ; i++ ) {
 
-            head.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
-            head = head.next;
-        }
     
     return list.next;  
 
