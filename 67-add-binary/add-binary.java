@@ -11,19 +11,13 @@ class Solution {
                 sum+= b.charAt(lenB-i)-'0';
             }
             sum+=carry;
-            if(sum > 1){
-                carry = 1;
-                result += (sum>2) ? 1 : 0;
-            }else{
-                result+=sum;
-                carry = 0;
-            }
+            carry = sum/2;
+            result += sum%2;
             sum = 0;
             if(lenA-i <= 0 && lenB-i <= 0){
                 if(carry > 0){result+=carry;}
                 break;
             }
-
 
         }
         return new StringBuilder(result).reverse().toString();
