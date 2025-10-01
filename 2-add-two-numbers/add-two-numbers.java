@@ -10,8 +10,7 @@
  */
 class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-    ListNode list = new ListNode(0);
-    ListNode head = list;
+
     int carry = 0, sum = 0;
     String result = "";
 
@@ -26,10 +25,7 @@ class Solution {
             l2 = l2.next;
         }
         sum+=carry;
-         
-
         if(sum > 9){
-            
             carry = sum/10;
             sum%=10;
             result+=sum;
@@ -44,13 +40,15 @@ class Solution {
                 break;
             }
     }
+     l1 = new ListNode(0);
+    ListNode head = l1;
     for (int i = 0 ; i < result.length() ; i++ ) {
 
             head.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
             head = head.next;
         }
     
-    return list.next;  
+    return l1.next;  
 
     }
 
