@@ -28,15 +28,13 @@ class Solution {
         if(sum > 9){
             carry = sum/10;
             sum%=10;
-            result+=sum;
-            sum = 0;
         }else{
-            result+=sum;
-            carry = 0;
-            sum = 0;
-        }       if(l1 == null && l2 == null){
-                if(carry != 0){result += carry;}
-                
+            carry = 0; 
+        }
+        result+=sum;
+        sum = 0;
+        if(l1 == null && l2 == null){
+            if(carry != 0){result += carry;}  
                 break;
             }
     }
