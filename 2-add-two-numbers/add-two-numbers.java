@@ -40,15 +40,15 @@ class Solution {
                 break;
             }
     }
-    l1 = new ListNode(0);
-    l2 = l1;
+    ListNode list = new ListNode(0);
+    ListNode head = list;
     for (int i = 0 ; i < result.length() ; i++ ) {
 
-            l2.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
-            l2 = l2.next;
+            head.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
+            head = head.next;
         }
     
-    return l1.next;  
+    return list.next;  
 
     }
 
