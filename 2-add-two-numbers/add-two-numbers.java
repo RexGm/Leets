@@ -40,12 +40,12 @@ class Solution {
                 break;
             }
     }
-     l1 = new ListNode(0);
-    ListNode head = l1;
+    l1 = new ListNode(0);
+    l2 = l1;
     for (int i = 0 ; i < result.length() ; i++ ) {
 
-            head.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
-            head = head.next;
+            l2.next = new ListNode(Integer.parseInt(result.charAt(i)+""));
+            l2 = l2.next;
         }
     
     return l1.next;  
